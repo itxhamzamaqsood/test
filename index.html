@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Management System</title>
+  <style>
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-600 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center px-4 py-3">
+      <!-- Logo -->
+      <a href="#" class="text-white text-3xl font-bold tracking-wide">
+        HMS
+      </a>
+  
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex space-x-8 text-white text-lg">
+        <li>
+          <a href="#home" class="hover:text-blue-300 transition duration-300">Home</a>
+        </li>
+        <li>
+          <a href="#services" class="hover:text-blue-300 transition duration-300">Services</a>
+        </li>
+        <li>
+          <a href="#about" class="hover:text-blue-300 transition duration-300">About</a>
+        </li>
+        <li>
+          <a href="#footer" class="hover:text-blue-300 transition duration-300">Contact</a>
+        </li>
+      </ul>
+  
+      <!-- Appointment Button -->
+      <button
+  data-tf-popup="n42jJnhm"
+  class="bg-blue-700 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-blue-700 transition duration-300 hidden md:block bg-blue-100 text-blue-600 font-semibold px-4 py-2 rounded-lg shadow hover:bg-blue-100 transition duration-300"
+>
+  <a href="#appointment">Create Appointment</a>
+</button>
+
+  
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button id="menu-btn" class="text-white focus:outline-none">
+          <!-- Hamburger Icon -->
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-500">
+      <ul class="flex flex-col items-center space-y-4 py-4 text-white text-lg">
+        <li>
+          <a href="#home" class="hover:text-blue-300 transition duration-300">Home</a>
+        </li>
+        <li>
+          <a href="#services" class="hover:text-blue-300 transition duration-300">Services</a>
+        </li>
+        <li>
+          <a href="#about" class="hover:text-blue-300 transition duration-300">About</a>
+        </li>
+        <li>
+          <a href="#contact" class="hover:text-blue-300 transition duration-300">Contact</a>
+        </li>
+        <li>
+          <button data-tf-popup="n42jJnhm" class="bg-white text-blue-600 font-semibold px-4 py-2 rounded-lg shadow hover:bg-blue-100 transition duration-300">
+            Create Appointment
+          </button>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Script for Mobile Menu Toggle -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+  
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </nav>
+  
+
+  <!-- Hero Section -->
+  <section id="home" class="bg-blue-500 text-white text-center py-20 relative">
+    <!-- Background SVG -->
+    <div class="absolute inset-0 bg-blue-700 opacity-40"></div>
+    
+    <div class="container mx-auto relative z-10">
+      <!-- Section Title -->
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 animate__animated animate__fadeIn animate__delay-1s">
+        Welcome to Our Laboratory
+      </h1>
+      <p class="text-lg md:text-2xl mb-6 animate__animated animate__fadeIn animate__delay-2s">
+        Dedicated to accurate diagnostics and exceptional healthcare services.
+      </p>
+      
+      <!-- Hero Icons -->
+      <div class="flex justify-center mb-8 animate__animated animate__fadeIn animate__delay-3s">
+        <svg class="w-16 h-16 text-white mx-4 hover:text-blue-400 transition duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m3 3l-3-3-3 3m9 0l-3-3 3 3" />
+        </svg>
+        <svg class="w-16 h-16 text-white mx-4 hover:text-blue-400 transition duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+        <svg class="w-16 h-16 text-white mx-4 hover:text-blue-400 transition duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 9l2 2-2 2M9 12H7m6-3V6a2 2 0 10-4 0v6" />
+        </svg>
+      </div>
+  
+      <!-- Learn More Button -->
+      <button onclick="showAlert()" class="bg-white text-blue-600 px-6 py-2 rounded hover:bg-gray-200 transition duration-300">
+        <a href="#about">Learn More</a>
+      </button>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <!-- Font Awesome CDN for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Services Section -->
+<section id="services" class="container mx-auto py-16 px-6 bg-gray-100">
+    <!-- Section Title -->
+    <h2 class="text-4xl font-bold text-center mb-12 text-blue-600">Our Lab Services</h2>
+  
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10">
+      <!-- Card 1 - Blood Test -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:-translate-y-3 transition duration-300">
+        <div class="flex justify-center mb-4">
+          <!-- Blood Test SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 1C7.2 1 5 3.2 5 6c0 2 3 7 4.7 9.5.6.8 1.8.8 2.4 0C12 13 15 8 15 6c0-2.8-2.2-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Blood Test</h3>
+        <p class="text-gray-600">Accurate and quick blood analysis for diagnosing diseases.</p>
+      </div>
+  
+      <!-- Card 2 - X-Ray -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:-translate-y-3 transition duration-300">
+        <div class="flex justify-center mb-4">
+          <!-- X-Ray SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h14a1 1 0 011 1v14a1 1 0 01-1 1H3a1 1 0 01-1-1V3zm3 3h10v2H5V6zm0 4h10v2H5v-2zm0 4h10v2H5v-2z"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800">X-Ray</h3>
+        <p class="text-gray-600">High-quality imaging for precise diagnosis.</p>
+      </div>
+  
+      <!-- Card 3 - Ultrasound -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:-translate-y-3 transition duration-300">
+        <div class="flex justify-center mb-4">
+          <!-- Ultrasound SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm10 2a1 1 0 00-2 0v8a1 1 0 102 0V6zm-4 2a1 1 0 00-2 0v4a1 1 0 102 0V8z"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Ultrasound</h3>
+        <p class="text-gray-600">Advanced ultrasound for detailed internal organ imaging.</p>
+      </div>
+  
+      <!-- Card 4 - ECG -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:-translate-y-3 transition duration-300">
+        <div class="flex justify-center mb-4">
+          <!-- ECG SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M1 10h4l2-3 4 6 2-3h6v2h-5l-3 4-4-6-2 3H1v-2z"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800">ECG</h3>
+        <p class="text-gray-600">Electrocardiograms for monitoring heart activity.</p>
+      </div>
+  
+      <!-- Card 5 - CT Scan -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:-translate-y-3 transition duration-300">
+        <div class="flex justify-center mb-4">
+          <!-- CT Scan SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M4 3a1 1 0 011-1h10a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V3zm2 2v10h8V5H6z"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800">CT Scan</h3>
+        <p class="text-gray-600">Cross-sectional imaging for accurate diagnostics.</p>
+      </div>
+  
+      <!-- Card 6 - MRI -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:-translate-y-3 transition duration-300">
+        <div class="flex justify-center mb-4">
+          <!-- MRI SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M3 5a1 1 0 011-1h12a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V5zm2 2v6h10V7H5z"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-800">MRI</h3>
+        <p class="text-gray-600">Advanced MRI scans for soft tissue evaluation.</p>
+      </div>
+    </div>
+  </section>
+    
+
+  <!-- About Section -->
+  <!-- About Us Section -->
+<section id="about" class="bg-gray-100 py-16 px-6">
+    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <!-- Left Content: Text -->
+      <div class="text-center lg:text-left">
+        <h2 class="text-4xl font-bold text-blue-600 mb-6">About Our Lab</h2>
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+          Located in the heart of <strong>Nakyal, Azad Kashmir</strong>, our laboratory has been providing top-quality diagnostic services for over 10 years. Our team of expert lab technicians is dedicated to delivering accurate, timely, and reliable test results to help patients and healthcare providers make informed decisions.
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700">
+          We specialize in <strong>Blood Tests, X-Rays, Ultrasounds, ECG, CT Scans, and MRIs</strong> using state-of-the-art equipment to ensure precision and quality.
+        </p>
+      </div>
+      <!-- Right Content: SVG Image -->
+      <div class="flex justify-center">
+        <!-- SVG Illustration -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-64 h-64 text-blue-600" fill="currentColor">
+          <!-- Base Circle -->
+          <circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="4" fill="none"></circle>
+          <!-- Microscope -->
+          <path d="M68 73h-8V64h2a2 2 0 002-2V50a2 2 0 00-2-2h-5V22a4 4 0 00-8 0v26h-5a2 2 0 00-2 2v12a2 2 0 002 2h2v9h-8a2 2 0 100 4h40a2 2 0 100-4zM50 18a2 2 0 012 2v25h-4V20a2 2 0 012-2zM43 50h14v8H43v-8z"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Appointment Section -->
+<!-- Appointment Section with Typeform Popup -->
+<!-- Appointment Section with Typeform Popup -->
+<section id="appointment" class="bg-gray-100 py-16 px-6">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold text-blue-600 mb-8">Book an Appointment</h2>
+  
+      <!-- Popup Trigger Button -->
+      <button
+        data-tf-popup="n42jJnhm" 
+        class="bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-blue-700 transition duration-300"
+      >
+        Book Appointment
+      </button>
+    </div>
+  </section>
+  
+  <!-- Typeform Popup Embed Script -->
+  <script src="https://embed.typeform.com/next/embed.js"></script>
+
+  
+  
+  <!-- Footer -->
+  <!-- Footer Section -->
+<!-- Footer Section -->
+<footer id="footer" class="bg-blue-600 text-white py-8">
+    <div class="container mx-auto px-6 md:px-12">
+      <!-- Footer Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">Contact Us</h3>
+          <p class="mb-2 flex items-center justify-center md:justify-start">
+            <i class="fas fa-phone-alt mr-2"></i> +92-234-052995
+          </p>
+          <p class="mb-2 flex items-center justify-center md:justify-start">
+            <i class="fas fa-envelope mr-2"></i> hamxii5656@gmail.com
+          </p>
+          <p class="flex items-center justify-center md:justify-start">
+            <i class="fas fa-map-marker-alt mr-2"></i> Nakyal, Azad Kashmir
+          </p>
+        </div>
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#home" class="hover:text-gray-200">Home</a></li>
+            <li><a href="#services" class="hover:text-gray-200">Services</a></li>
+            <li><a href="#about" class="hover:text-gray-200">About Us</a></li>
+            <li><a href="#contact" class="hover:text-gray-200">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Social Media Links -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">Follow Us</h3>
+          <div class="flex justify-center md:justify-start space-x-6">
+            <a href="#" class="hover:text-gray-200">
+              <i class="fab fa-facebook fa-2x">Facebook </i>
+            </a>
+            <a href="#" class="hover:text-gray-200">
+              <i class="fab fa-instagram fa-2x"> Instagram</i>
+            </a>
+            <a href="#" class="hover:text-gray-200">
+              <i class="fab fa-whatsapp fa-2x">Whatsapp</i>
+            </a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Footer Divider -->
+      <div class="border-t border-gray-400 my-6"></div>
+  
+      <!-- Footer Bottom -->
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p>&copy; 2024 Hospital Management System. All Rights Reserved.</p>
+        <div class="flex space-x-4 mt-4 md:mt-0">
+          <a href="#" class="hover:text-gray-200"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="#" class="hover:text-gray-200"><i class="fab fa-instagram fa-lg"></i></a>
+          <a href="#" class="hover:text-gray-200"><i class="fab fa-whatsapp fa-lg"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+ 
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
